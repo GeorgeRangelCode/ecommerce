@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const boom = require("boom");
 const productsRouter = require("./routes/views/products");
 const productsApiRouter = require("./routes/api/products");
+const authApiRouter = require("./routes/api/auth");
 const {
   logErrors,
   wrapErrors,
@@ -30,6 +31,9 @@ app.use("/products", productsRouter);
 
 /** Route API */
 app.use("/api/products", productsApiRouter);
+
+/** Route Auth */
+app.use("/api/auth", authApiRouter);
 
 /** Redirect */
 app.get("/", function (req, res) {
