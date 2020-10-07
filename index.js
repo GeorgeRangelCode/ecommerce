@@ -30,7 +30,8 @@ app.set("view engine", "pug");
 app.use("/products", productsRouter);
 
 /** Route API */
-app.use("/api/products", productsApiRouter);
+// app.use("/api/products", productsApiRouter);
+productsApiRouter(app);
 
 /** Route Auth */
 app.use("/api/auth", authApiRouter);
